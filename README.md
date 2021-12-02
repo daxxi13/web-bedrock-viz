@@ -1,6 +1,7 @@
 # web-bedrock-viz
 Auto gen map from your bedrock server
-Twice an hour copy your world and generate map with bedrock-viz in html format to Nginx web server
+
+Each xx min (30 by default) it copies your world and generate map with bedrock-viz in html format to Nginx web server
 
 
 variables:
@@ -14,4 +15,4 @@ You can run with
 docker run -d --name mapcraft -v /path/to/myworld:/source -p 80:80 daxxi13/web-bedrock-viz
 
 
-with your browser : http://<ip-of-your-docker-host>
+with your browser : "http://<ip-of-your-docker-host>"
