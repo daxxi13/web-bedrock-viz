@@ -1,4 +1,4 @@
-FROM debian:buster-slim as builder
+FROM ubuntu/nginx:1.18-21.04_edge as builder
 
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y cmake g++ git libboost-program-options-dev libpng++-dev zlib1g-dev
@@ -13,7 +13,7 @@ RUN cd /bedrock-viz && \
     make && \
     make install
 
-FROM nginx
+FROM ubuntu/nginx:1.18-21.04_edge
 
 RUN apt-get update && \
     apt-get install -y libpng16-16 libboost-program-options-dev cron && \
@@ -28,7 +28,7 @@ RUN chmod +x /map-update.sh
 COPY startup.sh /
 RUN chmod +x /startup.sh
 
-COPY index.html /usr/share/nginx/html/index.html
+COPY index.html /var/www/html/index.html
 
 ENTRYPOINT []
 CMD ["/startup.sh"]

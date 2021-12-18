@@ -9,10 +9,10 @@ else
   echo "MapSource not set or not a directory"
   exit 1
 fi
-if [ -d /usr/share/nginx/html ]; then
+if [ -d /var/www/html/ ]; then
   echo "out folder exist"
 else
   echo "creating out folder"
-  mkdir -p /usr/share/nginx/html
+  mkdir -p /var/www/html/
 fi
-/usr/local/bin/bedrock-viz --db /tmp/MapCopy --out /usr/share/nginx/html --html-all
+/usr/local/bin/bedrock-viz --db /tmp/MapCopy --out /var/www/html/ --html-all
