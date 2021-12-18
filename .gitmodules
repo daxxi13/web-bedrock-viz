@@ -1,3 +1,4 @@
 [submodule "bedrock-viz"]
 	path = bedrock-viz
 	url = https://github.com/geoffholden/bedrock-viz.git
+	branch = world_height
